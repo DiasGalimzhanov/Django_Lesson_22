@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+
+    {% for car in cars %}
+    <div class="alert alert-primary" role="alert">
+        <a href="{% url 'detail' car.id %}">{{ car.brand }} {{ car.model }}</a>
+      </div>
+    {% endfor %}
+{% endblock %}
